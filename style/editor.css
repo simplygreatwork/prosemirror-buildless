@@ -1,0 +1,18 @@
+
+#editor, .editor {
+	background: white;
+	color: black;
+	background-clip: padding-box;
+	padding: 5px 0;
+	margin-bottom: 23px;
+	font-family: 'Lato', sans-serif;
+}
+
+.ProseMirror {
+	padding: 4px 8px;
+	outline: none;
+}
+
+#content {
+	display: none;
+}

@@ -1,0 +1,15 @@
+{
+	"name": "prosemirror-buildless",
+	"version": "1.0.0",
+	"description": "ProseMirror example without a build process",
+	"license": "MIT",
+	"dependencies": {
+		"es-module-shims": "^0.5.2",
+		"prosemirror-example-setup": "*",
+		"prosemirror-model": "*",
+		"prosemirror-schema-basic": "*",
+		"prosemirror-schema-list": "*",
+		"prosemirror-state": "*",
+		"prosemirror-view": "*"
+	}
+}
