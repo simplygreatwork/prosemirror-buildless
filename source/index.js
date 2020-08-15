@@ -28,14 +28,7 @@ window.view = new EditorView(document.querySelector('#editor'), {
 			dropCursor(),
 			gapCursor(),
 			history(),
-			buildMenu(schema),
-			new Plugin({
-				props: {
-					attributes: {
-						class: 'ProseMirror-example-setup-style'
-					}
-				}
-			})
+			buildMenu(schema)
 		]
 	})
 })
