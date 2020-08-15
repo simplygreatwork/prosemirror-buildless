@@ -1,23 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en-US" translate="no">
 <head>
 	<meta charset="utf8">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
-	<link rel="stylesheet" href="./node_modules/prosemirror-menu/style/menu.css">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap"/>
+	<link rel="stylesheet" href="./node_modules/prosemirror-menu/style/menu.css"/>
 	<link rel="stylesheet" href="style/editor.css"/>
-	<style>
-		body {
-			margin:0;
-		}
-	</style>
 	<script defer src="./node_modules/es-module-shims/dist/es-module-shims.js"></script>
 	<script type="importmap-shim" src="source/import-map.js"></script>
+	<script type="module-shim">
+		
+		importShim.fetch = async function(url) {
+			url = url.indexOf('.js') < 0 ? url + '.js' : url
+			url = url + '?' + new Date().getTime()
+			return await fetch(url.indexOf('.js') < 0 ? url + ".js" : url)
+		}
+		
+	</script>
 	<script type="module-shim" src="source/index.js"></script>
+
 </head>
 <body>
 	<div id="editor" data-gramm_editor="false" data-google-translate="false" class="notranslate"></div>
 	<div id="content">
-		Hello!
+		<h1>Sample Document</h1>
+		<h2>Subheading</h2>
+		<p>paragraph</p>
+		<blockquote>blockquote</blockquote>
+		<h2>List</h2>
+		<ul>
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ul>
+		<h2>Image</h2>
+		<p>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+			<img src="https://prosemirror.net/img/picture.png"/>
+		</p>
 	</div>
 </body>
 </html>

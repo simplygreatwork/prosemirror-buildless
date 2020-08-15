@@ -8,15 +8,19 @@ const mac = typeof navigator != 'undefined' ? /Mac/.test(navigator.platform) : f
 
 export function buildKeymap(schema, mapKeys) {
 	
-	let keys = {}, type
-	function bind(key, cmd) {
+	let keys = {}
+	let type
+	
+	function bind(key, command) {
+		
 		if (mapKeys) {
 			let mapped = mapKeys[key]
 			if (mapped === false) return
 			if (mapped) key = mapped
 		}
-		keys[key] = cmd
+		keys[key] = command
 	}
+	
 	bind('Mod-z', undo)
 	bind('Shift-Mod-z', redo)
 	bind('Backspace', undoInputRule)
@@ -38,13 +42,13 @@ export function buildKeymap(schema, mapKeys) {
 	if (type = schema.nodes.ordered_list) bind('Shift-Ctrl-9', wrapInList(type))
 	if (type = schema.nodes.blockquote) bind('Ctrl->', wrapIn(type))
 	if (type = schema.nodes.hard_break) {
-		let br = type, cmd = chainCommands(exitCode, (state, dispatch) => {
+		let br = type, command = chainCommands(exitCode, (state, dispatch) => {
 			dispatch(state.tr.replaceSelectionWith(br.create()).scrollIntoView())
 			return true
 		})
-		bind('Mod-Enter', cmd)
-		bind('Shift-Enter', cmd)
-		if (mac) bind('Ctrl-Enter', cmd)
+		bind('Mod-Enter', command)
+		bind('Shift-Enter', command)
+		if (mac) bind('Ctrl-Enter', command)
 	}
 	if (type = schema.nodes.list_item) {
 		bind('Enter', splitListItem(type))
