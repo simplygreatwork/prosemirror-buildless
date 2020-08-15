@@ -32,3 +32,8 @@ window.view = new EditorView(document.querySelector('#editor'), {
 		]
 	})
 })
+
+window.setTimeout(function() {
+	let doc = window.view.state.toJSON().doc
+	console.log('doc: ' + JSON.stringify(doc, null, 2))
+}, 1000)
